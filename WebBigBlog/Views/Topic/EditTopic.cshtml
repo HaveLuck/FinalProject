@@ -1,0 +1,48 @@
+﻿@model WebBigBlog.Models.TopicModel
+
+@{
+    ViewData["Title"] = "EditTopic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>EditTopic</h1>
+    
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditTopic">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="ID" class="control-label"></label>
+                <input asp-for="ID" class="form-control" />
+                <span asp-validation-for="ID" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Name_Topic" class="control-label"></label>
+                <input asp-for="Name_Topic" class="form-control" />
+                <span asp-validation-for="Name_Topic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description_Topic" class="control-label"></label>
+                <input asp-for="Description_Topic" class="form-control" />
+                <span asp-validation-for="Description_Topic" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
